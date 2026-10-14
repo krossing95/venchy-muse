@@ -8,8 +8,6 @@ import { cacheLife } from "next/cache";
 import Link from "next/link";
 import * as React from "react";
 
-export const instant = false;
-
 export default async function Home() {
   cacheLife({
     stale: 600,

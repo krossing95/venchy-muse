@@ -6,17 +6,12 @@ import { cacheLife } from "next/cache";
 import * as React from "react";
 import ProgressiveArticles from "../../_components/progessive-load";
 import { getCategory } from "@/helpers/index.helpers";
-import { categories } from "@/constants/categories.constants";
 
 type ArticlePageParams = {
   params: Promise<{ categoryId: CategoryId }>;
 };
 
 export const instant = false;
-
-export async function generateStaticParams() {
-  return categories.map((category) => ({ categoryId: category.id }));
-}
 
 const ArticlesPage = async ({ params }: ArticlePageParams) => {
   cacheLife({

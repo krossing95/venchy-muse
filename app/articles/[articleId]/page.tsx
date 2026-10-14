@@ -29,26 +29,6 @@ type ArticleDetailPageParams = {
   params: Promise<{ articleId: string }>;
 };
 
-// export async function generateStaticParams() {
-//   const res = await fetch(process.env.NEXT_PUBLIC_HTTP + "fetch-slugs/", {
-//     headers: {
-//       "api-key": process.env.NEXT_PUBLIC_API_KEY ?? "",
-//     },
-//   });
-
-//   if (!res.ok) {
-//     throw new Error("Something went wrong");
-//   }
-
-//   const response = await res.json();
-
-//   const slugs: string[] = response?.data?.slugs;
-
-//   return slugs.map((s) => ({
-//     articleId: s,
-//   }));
-// }
-
 export async function generateMetadata(
   { params }: ArticleDetailPageParams,
   parent: ResolvingMetadata,
