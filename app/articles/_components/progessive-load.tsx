@@ -125,12 +125,18 @@ const ProgressiveArticles: React.FC<ProgressiveArticlesProps> = ({
 
       {states.hasMore && (
         <div ref={observerTarget}>
-          {states.loading && <p>Loading more articles...</p>}
+          {states.loading && (
+            <div className="flex justify-center items-center mt-4 py-6">
+              <p>Loading more articles...</p>
+            </div>
+          )}
         </div>
       )}
 
       {!states.hasMore && states.articles?.length > 0 && (
-        <p>You've reached the end.</p>
+        <div className="flex justify-center items-center mt-4 py-6">
+          <p>You've reached the end.</p>
+        </div>
       )}
     </>
   );

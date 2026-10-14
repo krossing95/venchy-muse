@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/utils/utils.header";
 import Footer from "@/components/utils/utils.footer";
 import * as React from "react";
+import { PageLoader } from "@/components/utils/utils.loader";
 
 export const metadata: Metadata = {
   title: "Venchy Muse — Find Your Style. Follow Your Muse.",
@@ -32,7 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body className="overflow-x-hidden">
         <Header />
-        <React.Suspense fallback={<p>loading</p>}>
+        <React.Suspense fallback={<PageLoader splash />}>
           <main className="pt-16 md:pt-20">{children}</main>
         </React.Suspense>
         <Footer />

@@ -18,7 +18,7 @@ const ArticlePosts: React.FC<{ posts: IPostPiece[] }> = ({ posts }) => {
             <h2>{post.title}</h2>
           </div>
           <div className="look-body">
-            <figure className="group cover-photo">
+            <figure className="group cover-photo h-auto!">
               <img
                 src={post.imageUrl}
                 alt={post.title}

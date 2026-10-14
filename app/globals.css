@@ -745,3 +745,91 @@ figcaption {
   color: var(--primary);
   text-decoration: dotted;
 }
+
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--foreground);
+  opacity: 1;
+  transition: opacity 0.55s ease;
+}
+.page-loader--done {
+  opacity: 0;
+  pointer-events: none;
+}
+.page-loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.page-loader img {
+  width: 56px;
+  height: auto;
+  animation:
+    loader-in 0.9s ease both,
+    loader-breathe 2.2s ease-in-out 1s infinite;
+}
+.page-loader-word {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--primary-foreground) 78%, transparent);
+  text-indent: 0.42em;
+  animation: loader-fade 1.2s ease 0.2s both;
+}
+.page-loader-line {
+  width: 130px;
+  height: 1px;
+  background: color-mix(in oklab, var(--primary-foreground) 22%, transparent);
+  overflow: hidden;
+  display: block;
+}
+.page-loader-line::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 40%;
+  background: var(--primary-foreground);
+  animation: loader-line 1.5s ease-in-out infinite;
+}
+@keyframes loader-in {
+  from {
+    opacity: 0;
+    transform: translateY(9px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes loader-breathe {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+@keyframes loader-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes loader-line {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(320%);
+  }
+}
