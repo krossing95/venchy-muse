@@ -1,4 +1,4 @@
-"use cache";
+// "use cache";
 
 import {
   IArticleIntroduction,
@@ -11,6 +11,7 @@ import { Metadata, ResolvingMetadata } from "next";
 import { CACHE_CONFIG } from "@/constants/cache.contants";
 import { PageLoader } from "@/components/utils/utils.loader";
 import AsyncWrapper from "./_components/async-wrapper";
+import AdsterraBanner468x60 from "@/components/ads/asterra/468x60-banner";
 
 export const instant = false;
 
@@ -56,7 +57,7 @@ export async function generateMetadata(
 }
 
 const ArticleDetailPage = async ({ params }: ArticleDetailPageParams) => {
-  cacheLife(CACHE_CONFIG);
+  // cacheLife(CACHE_CONFIG);
 
   const { articleId } = await params;
 

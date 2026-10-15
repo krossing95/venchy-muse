@@ -1,3 +1,5 @@
+import AdsterraBanner728x90 from "@/components/ads/asterra/728x90-banner";
+import AdsterraNativeBanner from "@/components/ads/asterra/native-banner";
 import RecentlyAddedPost from "@/components/utils/posts/recently-added.posts";
 import SectionTitle from "@/components/utils/utils.section-title";
 import { websiteName } from "@/constants/strings.contants";
@@ -74,6 +76,9 @@ const AsyncWrapper = async () => {
                 </span>
               </Link>
             )}
+            <div className="flex justify-center mt-3.5">
+              <AdsterraBanner728x90 />
+            </div>
           </div>
         </div>
       </section>
@@ -94,8 +99,11 @@ const AsyncWrapper = async () => {
             href="/articles/c/all"
             className="eyebrow border-b border-foreground pb-1"
           >
-            View all stories →
+            Click to View all stories →
           </Link>
+        </div>
+        <div className="flex justify-center mt-6">
+          <AdsterraNativeBanner />
         </div>
       </section>
     </>
