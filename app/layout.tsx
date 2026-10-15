@@ -36,11 +36,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="text/javascript"
           src="//acscdn.com/script/aclib.js"
         />
-        <script type="text/javascript">
+        {/* <script type="text/javascript">
           {`aclib.runAutoTag({
               zoneId: 'kkr9j8frni',
           })`}
-        </script>
+        </script> */}
       </head>
       <body className="overflow-x-hidden">
         <Header />
