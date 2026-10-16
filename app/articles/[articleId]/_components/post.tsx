@@ -14,19 +14,18 @@ const ArticlePosts: React.FC<{ posts: IPostPiece[] }> = ({ posts }) => {
         <AdsterraBanner728x90 />
       </div>
       {posts.map((post, i) => (
-        <>
+        <React.Fragment key={post._id}>
           <section
             id={`look-${post.tocId}`}
             data-look={(Number(post.tocId) - 1).toString()}
             className="look-section"
-            key={post._id}
           >
             <div className="look-heading">
               <span className="look-number text-zinc-500!">{post.tocId}</span>
               <h2>{post.title}</h2>
             </div>
             <div className="look-body">
-              <figure className="group cover-photo h-auto!">
+              <figure className="group cover-photo h-auto! w-full!">
                 <img
                   src={post.imageUrl}
                   alt={post.title}
@@ -69,7 +68,7 @@ const ArticlePosts: React.FC<{ posts: IPostPiece[] }> = ({ posts }) => {
               <AdCashBanner728x90 />
             </div>
           ) : null}
-        </>
+        </React.Fragment>
       ))}
     </>
   );
